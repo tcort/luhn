@@ -14,17 +14,14 @@ func Check(number string) bool {
 		return false
 	}
 
-	checkDigit := int(number[len(number)-1] - '0')
-	computedCheckDigit := 0
-	for i, double := len(number)-2, true; i >= 0; i-- {
+	checkSum := 0
+	for i, double := len(number)-1, false; i >= 0; i-- {
 		if double {
-			computedCheckDigit += doubles[int(number[i]-'0')]
+			checkSum += doubles[int(number[i]-'0')]
 		} else {
-			computedCheckDigit += int(number[i] - '0')
+			checkSum += int(number[i] - '0')
 		}
 		double = !double
 	}
-	computedCheckDigit = (10 - (computedCheckDigit % 10)) % 10
-
-	return checkDigit == computedCheckDigit
+	return checkSum%10 == 0
 }
