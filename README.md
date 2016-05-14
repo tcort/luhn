@@ -12,13 +12,13 @@ The latest and greatest version of this software is available at
 
 ## API
 
-### `luhn.Check(number)`
+For complete API documentation, see [godoc.org/github.com/tcort/luhn](https://godoc.org/github.com/tcort/luhn)
 
-Accepts a string argument consisting of 2 or more digits and returns
-`true` or `false` for `pass` or `fail`.
+## Example Usage
 
-## Usage
-
+Here's a simple command line tool that accepts a number as a
+command line argument and reports whether or not it passed
+the Luhn check:
 ```
 package main
 
